@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/ArbolB.h
+NodoA.h
+../include/NodoA.h
+cstring
+-
+
+../include/NodoA.h
+iostream
+-
+vector
+-
+
+/home/luis/Descargas/ArbolBin/src/ArbolB.cpp
+ArbolB.h
+/home/luis/Descargas/ArbolBin/src/ArbolB.h
+
+/home/luis/Descargas/ArbolBin/src/NodoA.cpp
+NodoA.h
+/home/luis/Descargas/ArbolBin/src/NodoA.h
+
+/home/luis/Descargas/ArbolBin/src/main.cpp
+ArbolB.h
+/home/luis/Descargas/ArbolBin/src/ArbolB.h
+

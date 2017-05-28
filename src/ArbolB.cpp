@@ -1,10 +1,10 @@
 #include "ArbolB.h"
-
+//constructor del arbol con un dato entero
 ArbolB::ArbolB(int Dato)
 {
 	this->Raiz = new NodoA(Dato);
 }
-
+//metodo para insertar un dato
 bool ArbolB::Insertar(int Dato)
 {
 	if(BuscarNodo(Dato)!=NULL)
@@ -13,7 +13,7 @@ bool ArbolB::Insertar(int Dato)
 	}
 	return InsertarRec(Dato, Raiz);
 }
-
+//metodo para insertar un dato recursivamente
 bool ArbolB::InsertarRec(int Dato, NodoA* aux)
 {
 	bool Res; 
@@ -45,7 +45,7 @@ bool ArbolB::InsertarRec(int Dato, NodoA* aux)
 	}
 return Res;
 }
-
+//metodo para borrar un dato
 bool ArbolB::Borrar(int ref){
 	NodoA* aux=BuscarNodo(ref);
 	if (aux==NULL)
@@ -92,7 +92,7 @@ bool ArbolB::Borrar(int ref){
 	return true;
 	
 }
-
+//metodo que hace el intercambio entre los nodos necesarios para guardar una rama o un nodo al eliminar otro
 void ArbolB::Intercambio(NodoA* a, NodoA* aux){
 
 	a->Padre->Hder=NULL;
@@ -106,7 +106,7 @@ void ArbolB::Intercambio(NodoA* a, NodoA* aux){
 	aux->Hder=NULL;
 }
 
-
+//metodo para buscar nodo, recibe una reerencia
 NodoA* ArbolB::BuscarNodo(int ref)
 {
 	if(Raiz==NULL)
@@ -116,7 +116,7 @@ NodoA* ArbolB::BuscarNodo(int ref)
 	
 	return BuscarRec(ref,Raiz);
 }
-
+//metod para buscar un nodo, ecibe una referencia y un nodo aux
 NodoA* ArbolB::BuscarRec(int ref,NodoA* aux){
 	NodoA* Busq=aux;
 	NodoA* Res;
@@ -144,7 +144,7 @@ NodoA* ArbolB::BuscarRec(int ref,NodoA* aux){
 	}
 	return NULL;
 }
-
+//meotod para imprimir
  void ArbolB::Imprimir()
 {
 		
@@ -157,6 +157,7 @@ NodoA* ArbolB::BuscarRec(int ref,NodoA* aux){
 	ImprimirRec(this->Raiz);
 
 }
+//metodo para imprimir recursivo
 void ArbolB::ImprimirRec(NodoA* aux)
 {
 	if(aux->Hizq!=NULL)
